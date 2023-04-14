@@ -5,7 +5,7 @@
 #include "AbilitySystemLog.h"
 
 FGameplayAbilitySpecHandle UDragonsEggFunctions::GiveAbilityWithInputTag(UAbilitySystemComponent* AbilitySystemComponent,
-	TSubclassOf<ULyraGameplayAbility> AbilityClass, int32 AbilityLevel /*= 0*/, FGameplayTag InputTag)
+	TSubclassOf<ULyraGameplayAbility> AbilityClass, int32 AbilityLevel /*= 0*/, FGameplayTag InputTag, UObject* SourceObject)
 {
 	check(AbilitySystemComponent);
 
@@ -27,6 +27,7 @@ FGameplayAbilitySpecHandle UDragonsEggFunctions::GiveAbilityWithInputTag(UAbilit
 
 	FGameplayAbilitySpec AbilitySpec(AbilityCDO, AbilityLevel);
 	AbilitySpec.DynamicAbilityTags.AddTag(InputTag);
+	AbilitySpec.SourceObject = SourceObject;
 
 	return AbilitySystemComponent->GiveAbility(AbilitySpec);
 

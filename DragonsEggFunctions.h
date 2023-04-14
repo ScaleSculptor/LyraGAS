@@ -25,7 +25,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category = "GameplayAbilities")
 		static FGameplayAbilitySpecHandle GiveAbilityWithInputTag(UAbilitySystemComponent* AbilitySystemComponent,
-			TSubclassOf<ULyraGameplayAbility> Ability, int32 AbilityLevel, FGameplayTag InputTag);
+			TSubclassOf<ULyraGameplayAbility> Ability, int32 AbilityLevel, FGameplayTag InputTag, UObject* SourceObject);
 	
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category = "Gameplay Abilities")
